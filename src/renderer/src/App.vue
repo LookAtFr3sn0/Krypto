@@ -21,16 +21,18 @@ update();
 
 <template>
   <div>
-    <div class="flex flex-col" >
+    <div class="flex flex-col max-w-md" >
       <span class="text-sm pl-1">Password</span>
-      <span class="border-1 border-gray-300 rounded-md min-w-min max-w-md flex-wrap min-h-6">{{ password }}</span>
+      <span class="border-1 border-gray-300 rounded-md break-all min-h-6">{{ password }}</span>
       <button @click="update">Generate</button>
     </div>
     <div>
-      <div>
+      <div class="flex flex-col w-full">
         <label for="length">Length</label>
-        <input @input="update" type="range" id="length" v-model="length" :min="minLen" :max="maxLen" />
-        <label for="length">{{ length }}</label>
+        <label for="length">
+          <input @input="update" type="range" id="length" v-model="length" :min="minLen" :max="maxLen" />
+          {{ length }}
+        </label>
       </div>
     </div>
     <span>Entropy: <span class="text-blue-500">{{ passwordStrength }}</span></span>
