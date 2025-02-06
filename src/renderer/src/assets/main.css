@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
 @import "tailwindcss";
 
 *,
@@ -29,3 +30,14 @@ body {
   user-select: none;
 }
 
+#app {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@layer utilities {
+  .label {
+    @apply text-sm pl-1;
+  }
+}
