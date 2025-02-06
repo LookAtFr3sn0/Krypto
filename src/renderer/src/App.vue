@@ -8,11 +8,11 @@ const maxLen = 512;
 
 const password = ref('');
 const passwordStrength = ref(0);
-const charset = ref("abc");
+const charset = ref("a");
 const length = ref(64);
 
 const update = () => {
-  password.value = GeneratePassword(length.value, charset.value);
+  password.value = GeneratePassword(length.value , charset.value);
   passwordStrength.value = Math.floor(PasswordStrength(length.value, charset.value));
 }
 
@@ -20,21 +20,25 @@ update();
 </script>
 
 <template>
-  <div>
-    <div class="flex flex-col max-w-md" >
-      <span class="text-sm pl-1">Password</span>
-      <span class="border-1 border-gray-300 rounded-md break-all min-h-6">{{ password }}</span>
-      <button @click="update">Generate</button>
+  <div class="flex flex-col gap-2">
+    <div class="flex flex-col" >
+      <span class="label">Password</span>
+      <div class="flex place-items-center gap-1">
+        <span class="select-text border-1 py-0.5 px-2 border-gray-300 rounded-md w-full break-all min-h-6">
+          {{ password }}
+        </span>
+        <span class="material-symbols-outlined" @click="update">replay</span>
+      </div>
     </div>
     <div>
       <div class="flex flex-col w-full">
-        <label for="length">Length</label>
-        <label for="length">
-          <input @input="update" type="range" id="length" v-model="length" :min="minLen" :max="maxLen" />
-          {{ length }}
+        <label class="label" for="length">Length</label>
+        <label class="flex gap-1" for="length">
+          <input @input="update" type="range" id="length" v-model="length" :min="minLen" :max="maxLen">
+          <span>{{ length }}</span>
         </label>
       </div>
     </div>
-    <span>Entropy: <span class="text-blue-500">{{ passwordStrength }}</span></span>
+    <div class="flex gap-1"><span>Entropy:</span><span class="text-blue-500">{{ passwordStrength }}</span></div>
   </div>
 </template>
