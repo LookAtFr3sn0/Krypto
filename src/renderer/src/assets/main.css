@@ -1,15 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
 @import "tailwindcss";
 
-*,
-*::before,
-*::after {
+body {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
-}
-
-body {
   line-height: 1.6;
   font-family:
     Inter,
