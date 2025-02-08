@@ -1,10 +1,10 @@
 {
-  "name": "krypto",
+  "name": "krypton",
   "version": "1.0.0",
-  "description": "An Electron application with Vue and TypeScript",
+  "description": "TypeScript secure password generator",
   "main": "./out/main/index.js",
-  "author": "example.com",
-  "homepage": "https://electron-vite.org",
+  "author": "LookAtFr3sn0",
+  "homepage": "https://github.com/LookAtFr3sn0/Krypton",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix",

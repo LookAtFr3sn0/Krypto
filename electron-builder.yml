@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: krypto
+appId: com.lookatfr3sn0.krypton
+productName: krypton
 directories:
   buildResources: build
 files:
@@ -12,7 +12,7 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: krypto
+  executableName: krypton
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
